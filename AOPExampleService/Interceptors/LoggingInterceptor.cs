@@ -4,10 +4,13 @@ namespace AOPExampleService.Interceptors
 {
     public class LoggingInterceptor : BaseInterceptor
     {
-        public override void Intercept(IInvocation invocation)
+        public override void OnBefore(IInvocation invocation)
         {
             Console.WriteLine("On Method Before");
-            invocation.Proceed();
+        }
+
+        public override void OnAfter(IInvocation invocation)
+        {
             Console.WriteLine("On Method After");
         }
     }

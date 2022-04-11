@@ -11,6 +11,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddSingleton(new ProxyGenerator());
         services.AddTransient<IInterceptor, PerformanceInterceptor>();
         services.AddTransient<IInterceptor, LoggingInterceptor>();
+        services.AddTransient<IInterceptor, ExceptionInterceptor>();
         services.AddProxiedTransient<IMessageService, MessageService>();
     })
     .Build();

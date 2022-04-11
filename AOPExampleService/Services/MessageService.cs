@@ -7,6 +7,7 @@ namespace AOPExampleService.Services
     {
         [PerformanceInterceptor]
         [LoggingInterceptor]
+        [ExceptionInterceptor]
         public void Send(string message)
         {
             Console.WriteLine(message);
